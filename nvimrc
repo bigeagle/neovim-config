@@ -27,6 +27,13 @@ filetype on
 filetype plugin on
 filetype indent on
 
+if has("autocmd")  " go back to where you exited
+    autocmd BufReadPost *
+        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+        \   exe "normal g'\"" |
+        \ endif
+endif
+
 set completeopt=longest,menu " preview
 
 if has('mouse')
@@ -65,6 +72,7 @@ set nofoldenable
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 set smartcase
+set ignorecase
 set nohlsearch
 set incsearch
 

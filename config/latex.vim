@@ -6,6 +6,8 @@
 " let g:LatexBox_output_type = 'pdf'
 " let g:LatexBox_viewer = 'qpdfview'
 "
+
+let g:tex_conceal=''
 let g:latex_viewer = 'qpdfview'
 let g:latex_toc_width = 25
 nmap <Leader>lt call latex#toc#toggle()

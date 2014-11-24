@@ -49,6 +49,9 @@ set showmatch
 set nobackup
 set nowritebackup
 
+"在insert模式下能用删除键进行删除
+set backspace=indent,eol,start
+
 set fenc=utf-8
 set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
@@ -70,7 +73,20 @@ vmap k gk
 nmap j gj
 nmap k gk
 
-nmap tl :TlistToggle<cr>
 nmap T :tabnew<cr>
 
 au FileType c,cpp,h,java,css,js,nginx,scala,go inoremap  <buffer>  {<CR> {<CR>}<Esc>O
+
+source ~/.nvim/config/airline.vim
+source ~/.nvim/config/python-mode.vim
+source ~/.nvim/config/tagbar.vim
+source ~/.nvim/config/nerdtree.vim
+source ~/.nvim/config/vimwiki.vim
+source ~/.nvim/config/cscope.vim
+source ~/.nvim/config/syntastic.vim
+source ~/.nvim/config/ycm.vim
+source ~/.nvim/config/ultisnips.vim
+source ~/.nvim/config/rainbow_brackets.vim
+source ~/.nvim/config/latex.vim
+source ~/.nvim/config/vim-go.vim
+source ~/.nvim/config/pandoc.vim

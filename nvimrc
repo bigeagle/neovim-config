@@ -85,6 +85,32 @@ nmap T :tabnew<cr>
 
 au FileType c,cpp,h,java,css,js,nginx,scala,go inoremap  <buffer>  {<CR> {<CR>}<Esc>O
 
+
+au BufNewFile *.py call ScriptHeader()
+au BufNewFile *.sh call ScriptHeader()
+
+function ScriptHeader()
+    if &filetype == 'python'
+        let header = "#!/usr/bin/env python2"
+        let coding = "# -*- coding:utf-8 -*-"
+        let cfg = "# vim: ts=4 sw=4 sts=4 expandtab"
+    elseif &filetype == 'sh'
+        let header = "#!/bin/bash"
+    endif
+    let line = getline(1)
+    if line == header
+        return
+    endif
+    normal m'
+    call append(0,header)
+    if &filetype == 'python'
+        call append(1,coding)
+        call append(3, cfg)
+    endif
+    normal ''
+endfunction
+
+
 source ~/.nvim/config/airline.vim
 source ~/.nvim/config/python-mode.vim
 source ~/.nvim/config/tagbar.vim

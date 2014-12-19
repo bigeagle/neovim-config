@@ -1,4 +1,30 @@
-execute pathogen#infect()
+set nocompatible
+filetype off
+set runtimepath+=~/.nvim/bundle/Vundle.vim
+call vundle#begin("~/.nvim/bundle")
+" Plugin List
+Plugin 'gmarik/vundle'
+Plugin 'Yggdroot/LeaderF'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Valloric/MatchTagAlways'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'mattn/emmet-vim'
+Plugin 'bigeagle/molokai'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/syntastic'
+Plugin 'klen/python-mode'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+Plugin 'lervag/vim-latex'
+Plugin 'file://$HOME/.nvim/bundle/colorpicker'
+
+call vundle#end()
 
 " UI
 if !exists("g:vimrc_loaded")

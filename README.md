@@ -8,6 +8,7 @@ It's a new start
 git clone https://github.com/bigeagle/neovim-config.git
 ln -s path/to/neovim-config ~/.nvim
 ln -s ~/.nvim/nvimrc ~/.nvimrc
+git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
 pip install neovim
 ```
 

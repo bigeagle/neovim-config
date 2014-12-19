@@ -3,7 +3,7 @@ filetype off
 set runtimepath+=~/.nvim/bundle/Vundle.vim
 call vundle#begin("~/.nvim/bundle")
 " Plugin List
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'Yggdroot/LeaderF'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Valloric/MatchTagAlways'

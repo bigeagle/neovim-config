@@ -22,6 +22,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
 Plugin 'fatih/vim-go'
 Plugin 'lervag/vim-latex'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()
@@ -150,3 +152,4 @@ source ~/.nvim/config/rainbow_brackets.vim
 source ~/.nvim/config/latex.vim
 source ~/.nvim/config/vim-go.vim
 source ~/.nvim/config/pandoc.vim
+source ~/.nvim/config/scss.vim

@@ -26,6 +26,8 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
+Plugin 'tpope/vim-fugitive'
+Plugin 'Mark'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()

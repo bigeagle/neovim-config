@@ -24,6 +24,8 @@ Plugin 'fatih/vim-go'
 Plugin 'lervag/vim-latex'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax' 
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()

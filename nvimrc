@@ -28,6 +28,7 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 Plugin 'tpope/vim-fugitive'
 Plugin 'Mark'
+Plugin 'caio/querycommandcomplete.vim'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()
@@ -157,3 +158,5 @@ source ~/.nvim/config/latex.vim
 source ~/.nvim/config/vim-go.vim
 source ~/.nvim/config/pandoc.vim
 source ~/.nvim/config/scss.vim
+source ~/.nvim/config/querycommand.vim
+

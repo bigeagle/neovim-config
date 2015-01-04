@@ -29,6 +29,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Mark'
 Plugin 'caio/querycommandcomplete.vim'
+Plugin 'freitass/todo.txt-vim'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()

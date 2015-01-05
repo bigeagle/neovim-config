@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
-set runtimepath+=~/.nvim/bundle/Vundle.vim
-call vundle#begin("~/.nvim/bundle")
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin("~/.vim/bundle")
 " Plugin List
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Yggdroot/LeaderF'
@@ -30,7 +30,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Mark'
 Plugin 'caio/querycommandcomplete.vim'
 Plugin 'freitass/todo.txt-vim'
-Plugin 'file://$HOME/.nvim/bundle/colorpicker'
+Plugin 'file://$HOME/.vim/bundle/colorpicker'
 
 call vundle#end()
 
@@ -89,7 +89,7 @@ set softtabstop=4
 set showmatch
 set nobackup
 set nowritebackup
-set directory=~/.nvim/.swapfiles
+set directory=~/.vim/.swapfiles
 
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start
@@ -146,19 +146,19 @@ function ScriptHeader()
 endfunction
 
 
-source ~/.nvim/config/airline.vim
-source ~/.nvim/config/python-mode.vim
-source ~/.nvim/config/tagbar.vim
-source ~/.nvim/config/nerdtree.vim
-source ~/.nvim/config/vimwiki.vim
-source ~/.nvim/config/cscope.vim
-source ~/.nvim/config/syntastic.vim
-source ~/.nvim/config/ycm.vim
-source ~/.nvim/config/ultisnips.vim
-source ~/.nvim/config/rainbow_brackets.vim
-source ~/.nvim/config/latex.vim
-source ~/.nvim/config/vim-go.vim
-source ~/.nvim/config/pandoc.vim
-source ~/.nvim/config/scss.vim
-source ~/.nvim/config/querycommand.vim
+source ~/.vim/config/airline.vim
+source ~/.vim/config/python-mode.vim
+source ~/.vim/config/tagbar.vim
+source ~/.vim/config/nerdtree.vim
+source ~/.vim/config/vimwiki.vim
+source ~/.vim/config/cscope.vim
+source ~/.vim/config/syntastic.vim
+source ~/.vim/config/ycm.vim
+source ~/.vim/config/ultisnips.vim
+source ~/.vim/config/rainbow_brackets.vim
+source ~/.vim/config/latex.vim
+source ~/.vim/config/vim-go.vim
+source ~/.vim/config/pandoc.vim
+source ~/.vim/config/scss.vim
+source ~/.vim/config/querycommand.vim
 

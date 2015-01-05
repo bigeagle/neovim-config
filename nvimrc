@@ -89,7 +89,7 @@ set softtabstop=4
 set showmatch
 set nobackup
 set nowritebackup
-set directory=~/.nvim/.swapfiles
+set directory=~/.nvim/.swapfiles//
 
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start

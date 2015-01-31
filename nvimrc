@@ -30,6 +30,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'Mark'
 Plugin 'caio/querycommandcomplete.vim'
 Plugin 'freitass/todo.txt-vim'
+Plugin 'sudar/vim-arduino-syntax'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()
@@ -60,6 +61,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+
+set list lcs=tab:\¦\   
 
 if has("autocmd")  " go back to where you exited
     autocmd BufReadPost *

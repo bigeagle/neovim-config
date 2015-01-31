@@ -131,6 +131,7 @@ function ScriptHeader()
     if &filetype == 'python'
         let header = "#!/usr/bin/env python2"
         let coding = "# -*- coding:utf-8 -*-"
+        let future = "from __future__ import print_function, division, unicode_literals"
         let cfg = "# vim: ts=4 sw=4 sts=4 expandtab"
     elseif &filetype == 'sh'
         let header = "#!/bin/bash"
@@ -142,8 +143,9 @@ function ScriptHeader()
     normal m'
     call append(0,header)
     if &filetype == 'python'
-        call append(1,coding)
-        call append(3, cfg)
+        call append(1, coding)
+        call append(2, future)
+        call append(4, cfg)
     endif
     normal ''
 endfunction

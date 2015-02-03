@@ -1,3 +1,5 @@
+let g:python_host_prog='/usr/bin/python2.7'
+
 set nocompatible
 filetype off
 set runtimepath+=~/.nvim/bundle/Vundle.vim

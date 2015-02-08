@@ -33,6 +33,7 @@ Plugin 'Mark'
 Plugin 'caio/querycommandcomplete.vim'
 Plugin 'freitass/todo.txt-vim'
 Plugin 'sudar/vim-arduino-syntax'
+Plugin 'zaiste/tmux.vim'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()

@@ -6,7 +6,8 @@ set runtimepath+=~/.nvim/bundle/Vundle.vim
 call vundle#begin("~/.nvim/bundle")
 " Plugin List
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Yggdroot/LeaderF'
+" Plugin 'Yggdroot/LeaderF'
+Plugin 'kien/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'Valloric/YouCompleteMe'
@@ -34,6 +35,7 @@ Plugin 'caio/querycommandcomplete.vim'
 Plugin 'freitass/todo.txt-vim'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'zaiste/tmux.vim'
+Plugin 'embear/vim-localvimrc'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()
@@ -169,4 +171,5 @@ source ~/.nvim/config/vim-go.vim
 source ~/.nvim/config/pandoc.vim
 source ~/.nvim/config/scss.vim
 source ~/.nvim/config/querycommand.vim
+source ~/.nvim/config/localvimrc.vim
 

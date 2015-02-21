@@ -118,6 +118,7 @@ set smartcase
 set ignorecase
 set nohlsearch
 set incsearch
+set autochdir
 
 vmap j gj
 vmap k gk

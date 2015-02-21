@@ -30,7 +30,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax' 
 Plugin 'tpope/vim-fugitive'
-Plugin 'Mark'
+Plugin 'jrosiek/vim-mark'
 Plugin 'caio/querycommandcomplete.vim'
 Plugin 'freitass/todo.txt-vim'
 Plugin 'sudar/vim-arduino-syntax'
@@ -173,4 +173,3 @@ source ~/.nvim/config/pandoc.vim
 source ~/.nvim/config/scss.vim
 source ~/.nvim/config/querycommand.vim
 source ~/.nvim/config/localvimrc.vim
-

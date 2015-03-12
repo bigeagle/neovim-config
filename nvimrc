@@ -36,6 +36,7 @@ Plugin 'freitass/todo.txt-vim'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'zaiste/tmux.vim'
 Plugin 'embear/vim-localvimrc'
+Plugin 'lepture/vim-jinja'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()

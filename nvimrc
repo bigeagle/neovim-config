@@ -96,9 +96,15 @@ set tabstop=4
 set softtabstop=4
 
 set showmatch
+set matchtime=0
 set nobackup
 set nowritebackup
 set directory=~/.nvim/.swapfiles//
+
+if has('nvim')
+   set ttimeout
+   set ttimeoutlen=0
+endif
 
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start
@@ -119,6 +125,7 @@ set smartcase
 set ignorecase
 set nohlsearch
 set incsearch
+set autochdir
 
 vmap j gj
 vmap k gk
@@ -173,3 +180,4 @@ source ~/.nvim/config/pandoc.vim
 source ~/.nvim/config/scss.vim
 source ~/.nvim/config/querycommand.vim
 source ~/.nvim/config/localvimrc.vim
+source ~/.nvim/config/ctrlp.vim

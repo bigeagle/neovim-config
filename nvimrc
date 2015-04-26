@@ -37,6 +37,8 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'zaiste/tmux.vim'
 Plugin 'embear/vim-localvimrc'
 Plugin 'lepture/vim-jinja'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-notes'
 Plugin 'file://$HOME/.nvim/bundle/colorpicker'
 
 call vundle#end()
@@ -168,7 +170,6 @@ source ~/.nvim/config/airline.vim
 source ~/.nvim/config/python-mode.vim
 source ~/.nvim/config/tagbar.vim
 source ~/.nvim/config/nerdtree.vim
-source ~/.nvim/config/vimwiki.vim
 source ~/.nvim/config/cscope.vim
 source ~/.nvim/config/syntastic.vim
 source ~/.nvim/config/ycm.vim
@@ -181,3 +182,9 @@ source ~/.nvim/config/scss.vim
 source ~/.nvim/config/querycommand.vim
 source ~/.nvim/config/localvimrc.vim
 source ~/.nvim/config/ctrlp.vim
+source ~/.nvim/config/vim-notes.vim
+
+" Load local config if exists
+if filereadable(expand("~/.nvim/config/local.vim"))
+	source ~/.nvim/config/local.vim
+endif

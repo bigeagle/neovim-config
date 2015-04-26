@@ -7,6 +7,7 @@ call vundle#begin("~/.nvim/bundle")
 " Plugin List
 Plugin 'gmarik/Vundle.vim'
 " Plugin 'Yggdroot/LeaderF'
+Plugin 'rking/ag.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'Valloric/MatchTagAlways'

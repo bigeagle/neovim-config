@@ -18,7 +18,9 @@ Plugin 'bigeagle/molokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
+Plugin 'hdima/python-syntax'
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
@@ -121,7 +123,7 @@ set foldmethod=syntax
 set foldcolumn=0 "设置折叠区域的宽度
 set foldlevel=100
 " 用空格键来开关折叠
-set nofoldenable
+" set nofoldenable
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 set smartcase

@@ -48,3 +48,6 @@
 
 
 let python_highlight_all = 1
+autocmd BufWritePre *.py :%s/\s\+$//e
+au FileType python setlocal cc=80 
+

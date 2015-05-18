@@ -25,7 +25,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'embear/vim-localvimrc'
 Plugin 'jrosiek/vim-mark'
-Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'luochen1990/rainbow'
 
 Plugin 'mattn/emmet-vim'
 Plugin 'hdima/python-syntax'

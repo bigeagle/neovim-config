@@ -25,8 +25,8 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'embear/vim-localvimrc'
 Plugin 'jrosiek/vim-mark'
-Plugin 'luochen1990/rainbow'
 Plugin 'mbbill/undotree'
+Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'mattn/emmet-vim'
 Plugin 'hdima/python-syntax'
@@ -124,13 +124,17 @@ set fenc=utf-8
 set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8
 
-"设置语法折叠
-set foldmethod=syntax
+"按缩进或手动折叠
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 set foldcolumn=0 "设置折叠区域的宽度
 set foldlevel=100
 " 用空格键来开关折叠
-" set nofoldenable
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+vnoremap <Space> zf
+
 
 set smartcase
 set ignorecase

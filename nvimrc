@@ -26,6 +26,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'embear/vim-localvimrc'
 Plugin 'jrosiek/vim-mark'
 Plugin 'luochen1990/rainbow'
+Plugin 'mbbill/undotree'
 
 Plugin 'mattn/emmet-vim'
 Plugin 'hdima/python-syntax'

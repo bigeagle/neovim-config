@@ -2,63 +2,56 @@ let g:python_host_prog='/usr/bin/python2.7'
 
 set nocompatible
 filetype off
-set runtimepath+=~/.nvim/bundle/Vundle.vim
-call vundle#begin("~/.nvim/bundle")
+
+call plug#begin("~/.nvim/bundle")
 " Plugin List
-Plugin 'gmarik/Vundle.vim'
-" Plugin 'Yggdroot/LeaderF'
-Plugin 'rking/ag.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'bigeagle/molokai'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'scrooloose/syntastic'
-"Plugin 'klen/python-mode'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'majutsushi/tagbar'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'embear/vim-localvimrc'
-Plugin 'jrosiek/vim-mark'
-Plugin 'mbbill/undotree'
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'rking/ag.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'Valloric/MatchTagAlways'
+Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
+Plug 'jlanzarotta/bufexplorer'
+Plug 'bigeagle/molokai'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 
-Plugin 'mattn/emmet-vim'
-Plugin 'hdima/python-syntax'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'fatih/vim-go'
-Plugin 'lervag/vim-latex'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax' 
-Plugin 'tpope/vim-fugitive'
-Plugin 'caio/querycommandcomplete.vim'
-Plugin 'sudar/vim-arduino-syntax'
-Plugin 'zaiste/tmux.vim'
-Plugin 'lepture/vim-jinja'
-Plugin 'cespare/vim-toml'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'embear/vim-localvimrc'
+Plug 'jrosiek/vim-mark'
+Plug 'mbbill/undotree'
+Plug 'kien/rainbow_parentheses.vim'
 
-Plugin 'freitass/todo.txt-vim'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-notes'
-Plugin 'justinmk/vim-gtfo'
-Plugin 'file://$HOME/.nvim/bundle/colorpicker'
+Plug 'mattn/emmet-vim'
+Plug 'hdima/python-syntax'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'fatih/vim-go'
+Plug 'lervag/vim-latex'
+Plug 'kchmck/vim-coffee-script'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax' 
+Plug 'tpope/vim-fugitive'
+Plug 'caio/querycommandcomplete.vim'
+Plug 'sudar/vim-arduino-syntax'
+Plug 'zaiste/tmux.vim'
+Plug 'lepture/vim-jinja'
+Plug 'cespare/vim-toml'
 
-call vundle#end()
+Plug 'freitass/todo.txt-vim'
+Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes'
+Plug 'justinmk/vim-gtfo'
+
+Plug '~/.nvim/bundle/colorpicker'
+call plug#end()
 
 " UI
 if !exists("g:vimrc_loaded")
     colorscheme molokai
     let g:molokai_original = 1
-    "colorscheme textmate256
     if has("gui_running")
-        "colorscheme textmate
         set guioptions-=T "隐藏工具栏
         set guioptions-=L
         set guioptions-=r
@@ -67,8 +60,6 @@ if !exists("g:vimrc_loaded")
         set gfw=STHeiti\ 9
         set langmenu=en_US
         set linespace=0
-        "set columns=195
-        "set lines=45
     endif " has
 endif " exists(...)
 
@@ -92,7 +83,6 @@ set completeopt=longest,menu " preview
 
 if has('mouse')
     set mouse=a
-    "set selection=exclusive
     set selectmode=mouse,key
     set nomousehide
 endif
@@ -150,7 +140,6 @@ nmap k gk
 nmap T :tabnew<cr>
 
 au FileType c,cpp,h,java,css,js,nginx,scala,go inoremap  <buffer>  {<CR> {<CR>}<Esc>O
-
 
 au BufNewFile *.py call ScriptHeader()
 au BufNewFile *.sh call ScriptHeader()

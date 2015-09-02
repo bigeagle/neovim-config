@@ -40,6 +40,7 @@ Plug 'zaiste/tmux.vim'
 Plug 'lepture/vim-jinja'
 Plug 'cespare/vim-toml'
 Plug 'mxw/vim-jsx'
+Plug 'isRuslan/vim-es6'
 
 Plug 'freitass/todo.txt-vim'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes'

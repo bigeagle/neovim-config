@@ -41,6 +41,7 @@ Plug 'lepture/vim-jinja'
 Plug 'cespare/vim-toml'
 Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
+Plug 'bigeagle/sieve.vim'
 
 Plug 'freitass/todo.txt-vim'
 Plug 'xolox/vim-misc' | Plug 'xolox/vim-notes'
@@ -187,6 +188,7 @@ source ~/.nvim/config/querycommand.vim
 source ~/.nvim/config/localvimrc.vim
 source ~/.nvim/config/ctrlp.vim
 source ~/.nvim/config/vim-notes.vim
+source ~/.nvim/config/indentLine.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))

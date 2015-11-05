@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 
 Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'embear/vim-localvimrc'
@@ -189,6 +190,7 @@ source ~/.nvim/config/localvimrc.vim
 source ~/.nvim/config/ctrlp.vim
 source ~/.nvim/config/vim-notes.vim
 source ~/.nvim/config/indentLine.vim
+source ~/.nvim/config/easymotion.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))

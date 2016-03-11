@@ -14,7 +14,11 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+if has('nvim')
+	Plug 'benekastah/neomake'
+else
+	Plug 'scrooloose/syntastic'
+endif
 
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
@@ -32,8 +36,6 @@ Plug 'fatih/vim-go'
 Plug 'lervag/vim-latex'
 Plug 'kchmck/vim-coffee-script'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax' 
 Plug 'tpope/vim-fugitive'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'zaiste/tmux.vim'

@@ -124,7 +124,8 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 set foldcolumn=0 "设置折叠区域的宽度
-set foldlevel=100
+set foldlevelstart=200
+set foldlevel=200  " disable auto folding
 " 用空格键来开关折叠
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 vnoremap <Space> zf

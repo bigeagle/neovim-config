@@ -29,6 +29,7 @@ Plug 'embear/vim-localvimrc'
 Plug 'jrosiek/vim-mark'
 Plug 'mbbill/undotree'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'airblade/vim-gitgutter'
 
 Plug 'mattn/emmet-vim'
 Plug 'hdima/python-syntax'
@@ -194,6 +195,7 @@ source ~/.nvim/config/vim-notes.vim
 source ~/.nvim/config/indentLine.vim
 source ~/.nvim/config/easymotion.vim
 source ~/.nvim/config/noplaintext.vim
+source ~/.nvim/config/gitgutter.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))

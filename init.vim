@@ -20,6 +20,7 @@ else
 	Plug 'scrooloose/syntastic'
 endif
 
+Plug 'vim-scripts/DrawIt'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
@@ -192,6 +193,7 @@ source ~/.nvim/config/ctrlp.vim
 source ~/.nvim/config/vim-notes.vim
 source ~/.nvim/config/indentLine.vim
 source ~/.nvim/config/easymotion.vim
+source ~/.nvim/config/noplaintext.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))

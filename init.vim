@@ -30,6 +30,7 @@ Plug 'jrosiek/vim-mark'
 Plug 'mbbill/undotree'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'mattn/emmet-vim'
 Plug 'hdima/python-syntax'

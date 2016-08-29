@@ -1,4 +1,4 @@
-let g:python_host_prog='/usr/bin/python2.7'
+let g:python_host_prog='/usr/bin/python3'
 
 set nocompatible
 filetype off
@@ -9,7 +9,7 @@ Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/MatchTagAlways'
-Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang ./install.sh --clang-completer --system-libclang --system-boost'}
+Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
 Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
@@ -57,6 +57,7 @@ call plug#end()
 if !exists("g:vimrc_loaded")
     colorscheme molokai
     let g:molokai_original = 1
+	set termguicolors
     if has("gui_running")
         set guioptions-=T "隐藏工具栏
         set guioptions-=L

@@ -4,6 +4,8 @@ if has('nvim')
 	map <leader>sc :Neomake!<CR>
 	let g:neomake_python_enabled_makers = ['flake8']
 	let g:neomake_go_enabled_makers = ['go', 'golint']
+	let g:neomake_cpp_enable_markers=['clang']
+	let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
 
 else
 	let g:syntastic_quiet_messages = {'level': 'warnings'}

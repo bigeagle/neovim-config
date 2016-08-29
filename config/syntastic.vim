@@ -3,6 +3,7 @@ if has('nvim')
 	autocmd BufWritePost * Neomake
 	map <leader>sc :Neomake!<CR>
 	let g:neomake_python_enabled_makers = ['flake8']
+	let g:neomake_go_enabled_makers = ['go', 'golint']
 
 else
 	let g:syntastic_quiet_messages = {'level': 'warnings'}

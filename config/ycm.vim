@@ -13,4 +13,4 @@ let g:ycm_filetype_whitelist = {
     \ 'cpp': 1,
     \ 'python': 1 
     \}
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
+nnoremap <leader>gd :YcmCompleter GoTo<CR>

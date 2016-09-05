@@ -11,5 +11,14 @@ let g:tex_conceal=''
 " let g:latex_viewer = 'qpdfview'
 let g:latex_toc_width = 25
 let g:latex_view_general_viewer = 'qpdfview'
-nmap <Leader>lt call latex#toc#toggle()
+
+function! TeXForwardSearch()
+	let cmd = "qpdfview --unique ".expand('%:r').".pdf#src:".expand('%:p').":".line('.').":".col('.')
+	echo cmd
+	let output = system(cmd)
+endfunction
+
+au filetype tex nnoremap <Leader>lt :call latex#toc#toggle()<CR>
+au filetype tex nnoremap <Leader>f :call TeXForwardSearch()<CR>
+
 

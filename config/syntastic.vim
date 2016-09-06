@@ -6,6 +6,7 @@ if has('nvim')
 	let g:neomake_go_enabled_makers = ['go', 'golint']
 	let g:neomake_cpp_enable_markers=['clang']
 	let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
+	let g:neomake_javascript_enabled_makers = ['eslint']
 
 else
 	let g:syntastic_quiet_messages = {'level': 'warnings'}

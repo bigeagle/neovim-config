@@ -55,11 +55,11 @@ Plug 'justinmk/vim-gtfo'
 Plug '~/.nvim/bundle/colorpicker'
 call plug#end()
 
+
 " UI
 if !exists("g:vimrc_loaded")
     colorscheme molokai
     let g:molokai_original = 1
-	set termguicolors
     if has("gui_running")
         set guioptions-=T "隐藏工具栏
         set guioptions-=L
@@ -112,8 +112,9 @@ set nowritebackup
 set directory=~/.nvim/.swapfiles//
 
 if has('nvim')
-   set ttimeout
-   set ttimeoutlen=0
+  set termguicolors
+  set ttimeout
+  set ttimeoutlen=0
 endif
 
 "在insert模式下能用删除键进行删除

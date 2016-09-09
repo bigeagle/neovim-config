@@ -42,6 +42,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sudar/vim-arduino-syntax'
 Plug 'zaiste/tmux.vim'
+Plug 'elzr/vim-json'
 Plug 'lepture/vim-jinja'
 Plug 'cespare/vim-toml'
 Plug 'mxw/vim-jsx'
@@ -198,6 +199,7 @@ source ~/.nvim/config/indentLine.vim
 source ~/.nvim/config/easymotion.vim
 source ~/.nvim/config/noplaintext.vim
 source ~/.nvim/config/gitgutter.vim
+source ~/.nvim/config/json.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))

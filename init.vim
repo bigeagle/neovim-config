@@ -48,6 +48,7 @@ Plug 'cespare/vim-toml'
 Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
 Plug 'bigeagle/sieve.vim'
+Plug 'posva/vim-vue'
 
 Plug 'caio/querycommandcomplete.vim'
 Plug 'justinmk/vim-gtfo'
@@ -154,6 +155,7 @@ au FileType c,cpp,h,java,css,js,nginx,scala,go inoremap  <buffer>  {<CR> {<CR>}<
 
 au BufNewFile *.py call ScriptHeader()
 au BufNewFile *.sh call ScriptHeader()
+au FileType vue syntax sync minlines=500
 
 function ScriptHeader()
     if &filetype == 'python'
@@ -206,3 +208,4 @@ source ~/.nvim/config/json.vim
 if filereadable(expand("~/.nvim/config/local.vim"))
 	source ~/.nvim/config/local.vim
 endif
+

@@ -14,11 +14,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
-if has('nvim')
-	Plug 'benekastah/neomake'
-else
-	Plug 'scrooloose/syntastic'
-endif
+Plug 'scrooloose/syntastic'
 
 Plug 'vim-scripts/DrawIt'
 Plug 'terryma/vim-multiple-cursors'

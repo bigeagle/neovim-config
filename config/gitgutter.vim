@@ -1,1 +1,1 @@
-nmap <Leader>gd :GitGutterToggle<cr>
+"nmap <Leader>gd :GitGutterToggle<cr>

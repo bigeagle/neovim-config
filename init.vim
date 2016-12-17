@@ -49,6 +49,7 @@ Plug 'mxw/vim-jsx'
 Plug 'isRuslan/vim-es6'
 Plug 'bigeagle/sieve.vim'
 Plug 'posva/vim-vue'
+Plug 'google/vim-ft-bzl'
 
 Plug 'caio/querycommandcomplete.vim'
 Plug 'justinmk/vim-gtfo'

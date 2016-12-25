@@ -10,7 +10,7 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:ycm_filetype_whitelist = { 
     \ 'c': 1 ,
-    \ 'cpp': 1
+    \ 'cpp': 1,
+    \ 'python': 1
     \}
-
 au FileType cpp nnoremap <Leader>g :YcmCompleter GoTo<CR>

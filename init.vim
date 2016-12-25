@@ -202,7 +202,6 @@ source ~/.nvim/config/vim-notes.vim
 source ~/.nvim/config/indentLine.vim
 source ~/.nvim/config/easymotion.vim
 source ~/.nvim/config/noplaintext.vim
-source ~/.nvim/config/gitgutter.vim
 source ~/.nvim/config/json.vim
 
 " Load local config if exists

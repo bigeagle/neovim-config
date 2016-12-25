@@ -35,6 +35,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
 Plug 'lervag/vim-latex'
 Plug 'kchmck/vim-coffee-script'
@@ -183,7 +184,7 @@ endfunction
 
 
 source ~/.nvim/config/airline.vim
-source ~/.nvim/config/python-mode.vim
+source ~/.nvim/config/python.vim
 source ~/.nvim/config/tagbar.vim
 source ~/.nvim/config/nerdtree.vim
 source ~/.nvim/config/cscope.vim

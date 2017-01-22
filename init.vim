@@ -54,6 +54,7 @@ Plug 'google/vim-ft-bzl'
 
 Plug 'caio/querycommandcomplete.vim'
 Plug 'justinmk/vim-gtfo'
+Plug 'freitass/todo.txt-vim'
 
 Plug '~/.nvim/bundle/colorpicker'
 call plug#end()

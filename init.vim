@@ -31,6 +31,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
 Plug 'lervag/vim-latex'
 Plug 'kchmck/vim-coffee-script'
@@ -49,6 +50,7 @@ Plug 'google/vim-ft-bzl'
 
 Plug 'caio/querycommandcomplete.vim'
 Plug 'justinmk/vim-gtfo'
+Plug 'freitass/todo.txt-vim'
 
 Plug '~/.nvim/bundle/colorpicker'
 call plug#end()
@@ -179,7 +181,7 @@ endfunction
 
 
 source ~/.nvim/config/airline.vim
-source ~/.nvim/config/python-mode.vim
+source ~/.nvim/config/python.vim
 source ~/.nvim/config/tagbar.vim
 source ~/.nvim/config/nerdtree.vim
 source ~/.nvim/config/cscope.vim
@@ -198,7 +200,6 @@ source ~/.nvim/config/vim-notes.vim
 source ~/.nvim/config/indentLine.vim
 source ~/.nvim/config/easymotion.vim
 source ~/.nvim/config/noplaintext.vim
-source ~/.nvim/config/gitgutter.vim
 source ~/.nvim/config/json.vim
 
 " Load local config if exists

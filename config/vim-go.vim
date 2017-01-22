@@ -10,4 +10,4 @@ au FileType go set noexpandtab
 au FileType go set foldmethod=indent
 au FileType go nmap <Leader>i <Plug>(go-info)
 au FileType go nmap K <Plug>(go-doc-vertical)
-au FileType go nmap <Leader>gd <Plug>(go-def)
+au FileType go nmap <Leader>g <Plug>(go-def)

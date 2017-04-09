@@ -13,9 +13,20 @@ let g:latex_toc_width = 25
 let g:latex_view_general_viewer = 'qpdfview'
 
 function! TeXForwardSearch()
-	let cmd = "qpdfview --unique ".expand('%:r').".pdf#src:".expand('%:p').":".line('.').":".col('.')
+	if exists("g:latex_main_pdf")
+		let cmd = "qpdfview --unique ".g:latex_main_pdf."#src:".expand('%:p').":".line('.').":".col('.')
+	else
+		let cmd = "qpdfview --unique ".expand('%:r').".pdf#src:".expand('%:p').":".line('.').":".col('.')
+	endif
 	echo cmd
-	let output = system(cmd)
+	
+	if has('nvim')
+		let job = jobstart(cmd)
+	elseif v:version >= 800
+		let job = job_start(cmd)
+	else
+		let output = system(cmd)
+	endif
 endfunction
 
 au filetype tex nnoremap <Leader>lt :call latex#toc#toggle()<CR>

@@ -120,6 +120,10 @@ endif
 "在insert模式下能用删除键进行删除
 set backspace=indent,eol,start
 
+"conceal
+set conceallevel=2
+set concealcursor=""
+
 set fenc=utf-8
 set fencs=utf-8,gbk,gb18030,gb2312,cp936,usc-bom,euc-jp
 set enc=utf-8

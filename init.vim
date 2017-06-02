@@ -205,6 +205,7 @@ source ~/.nvim/config/indentLine.vim
 source ~/.nvim/config/easymotion.vim
 source ~/.nvim/config/noplaintext.vim
 source ~/.nvim/config/json.vim
+source ~/.nvim/config/terminal.vim
 
 " Load local config if exists
 if filereadable(expand("~/.nvim/config/local.vim"))

@@ -1,5 +1,4 @@
 nmap nt :NERDTreeToggle<cr>
-" nmap nT :NERDTreeTabsToggle<cr>
 let NERDTreeShowBookmarks=0
 let NERDTreeMouseMode=2
 
@@ -21,5 +20,8 @@ let g:netrw_silent        = 1
 let g:netrw_special_syntax= 1
 let g:netrw_browse_split = 3
 let g:netrw_banner = 0
+
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

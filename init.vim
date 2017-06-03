@@ -9,16 +9,17 @@ Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/MatchTagAlways'
-Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer'}
+Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer', 'for': ['c', 'cpp', 'python']}
 Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
+Plug 'hkupty/nvimux'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 
 Plug 'vim-scripts/DrawIt'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'easymotion/vim-easymotion'
+" Plug 'easymotion/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'embear/vim-localvimrc'
@@ -162,9 +163,7 @@ au FileType vue syntax sync minlines=500
 
 function ScriptHeader()
     if &filetype == 'python'
-        let header = "#!/usr/bin/env python2"
-        let coding = "# -*- coding:utf-8 -*-"
-        let future = "from __future__ import print_function, division, unicode_literals"
+        let header = "#!/usr/bin/env python"
         let cfg = "# vim: ts=4 sw=4 sts=4 expandtab"
     elseif &filetype == 'sh'
         let header = "#!/bin/bash"
@@ -176,9 +175,7 @@ function ScriptHeader()
     normal m'
     call append(0,header)
     if &filetype == 'python'
-        call append(1, coding)
-        call append(2, future)
-        call append(4, cfg)
+        call append(2, cfg)
     endif
     normal ''
 endfunction
@@ -188,7 +185,6 @@ source ~/.nvim/config/airline.vim
 source ~/.nvim/config/python.vim
 source ~/.nvim/config/tagbar.vim
 source ~/.nvim/config/nerdtree.vim
-source ~/.nvim/config/cscope.vim
 source ~/.nvim/config/syntastic.vim
 source ~/.nvim/config/ycm.vim
 source ~/.nvim/config/ultisnips.vim
@@ -202,7 +198,6 @@ source ~/.nvim/config/localvimrc.vim
 source ~/.nvim/config/ctrlp.vim
 source ~/.nvim/config/vim-notes.vim
 source ~/.nvim/config/indentLine.vim
-source ~/.nvim/config/easymotion.vim
 source ~/.nvim/config/noplaintext.vim
 source ~/.nvim/config/json.vim
 source ~/.nvim/config/terminal.vim

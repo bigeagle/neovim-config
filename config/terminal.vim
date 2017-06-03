@@ -1,26 +1,4 @@
-"tnoremap <Esc> <C-\><C-n>
-
-tnoremap <C-a>h <C-\><C-n><C-w>h
-tnoremap <C-a>j <C-\><C-n><C-w>j
-tnoremap <C-a>k <C-\><C-n><C-w>k
-tnoremap <C-a>l <C-\><C-n><C-w>l
-tnoremap <C-a>n <C-\><C-n>gt<CR>
-tnoremap <C-a>p <C-\><C-n>gT<CR>
- 
-" nnoremap <C-a>h <C-\><C-n><C-w>h
-" nnoremap <C-a>j <C-\><C-n><C-w>j
-" nnoremap <C-a>k <C-\><C-n><C-w>k
-" nnoremap <C-a>l <C-\><C-n><C-w>l
-" nnoremap <C-a>n <C-\><C-n>gt<CR>
-" nnoremap <C-a>p <C-\><C-n>gT<CR>
-
-" tnoremap <C-a>% <C-\><C-n>:vsplit term://zsh<CR>
-" tnoremap <C-a>: <C-\><C-n>:split term://zsh<CR>
-" tnoremap <C-a>c <C-\><C-n>:tabnew term://zsh<CR>
-" nnoremap <C-a>% <C-\><C-n>:vsplit term://zsh<CR>
-" noremap <C-a>: <C-\><C-n>:split term://zsh<CR>
-" noremap <C-a>c <C-\><C-n>:tabnew term://zsh<CR>
- 
+let g:nvimux_prefix='<C-a>'
 
 " # blck
 let g:terminal_color_0="#1d1d1d"

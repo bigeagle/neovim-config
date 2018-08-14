@@ -9,13 +9,13 @@ Plug 'rking/ag.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'Valloric/MatchTagAlways'
-Plug 'Valloric/YouCompleteMe', {'do': 'CXX=clang++ CC=clang python install.py --clang-completer', 'for': ['c', 'cpp', 'python']}
 Plug 'jlanzarotta/bufexplorer'
 Plug 'bigeagle/molokai'
 Plug 'bling/vim-airline'
 Plug 'hkupty/nvimux'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 
 Plug 'vim-scripts/DrawIt'
 Plug 'terryma/vim-multiple-cursors'
@@ -32,7 +32,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
 Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
 Plug 'lervag/vim-latex'
 Plug 'kchmck/vim-coffee-script'
@@ -44,10 +43,44 @@ Plug 'elzr/vim-json'
 Plug 'lepture/vim-jinja'
 Plug 'cespare/vim-toml'
 Plug 'mxw/vim-jsx'
+Plug 'groenewege/vim-less'
 Plug 'isRuslan/vim-es6'
 Plug 'bigeagle/sieve.vim'
 Plug 'posva/vim-vue'
 Plug 'google/vim-ft-bzl'
+Plug 'mhartington/nvim-typescript'
+Plug 'leafgarland/typescript-vim'
+
+Plug 'junegunn/fzf.vim'
+
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" " Plug 'autozimu/LanguageClient-neovim', {
+" "     \ 'branch': 'next',
+" "     \ 'do': 'bash install.sh',
+" "     \ }
+" " Plug 'prabirshrestha/async.vim'
+" " Plug 'prabirshrestha/vim-lsp'
+" 
+" Plug 'zchee/deoplete-jedi'
+" Plug 'zchee/deoplete-go', { 'do': 'make'}
+" "Plug 'zchee/deoplete-clang'
+" Plug 'tweekmonster/deoplete-clang2'
+"
+
+" Plug 'roxma/ncm-clang'
+" Plug 'roxma/nvim-completion-manager', {'for': ['python', 'go', 'typescript']}
+
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-jedi'
+Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-bufword'
+
+" Plug 'Valloric/YouCompleteMe', {'for': ['cpp', 'hpp', 'c', 'h']}
+Plug 'Shougo/echodoc.vim'
+
+Plug 'davidhalter/jedi-vim'
 
 Plug 'caio/querycommandcomplete.vim'
 Plug 'justinmk/vim-gtfo'
@@ -88,8 +121,6 @@ if has("autocmd")  " go back to where you exited
         \   exe "normal g'\"" |
         \ endif
 endif
-
-set completeopt=longest,menu " preview
 
 if has('mouse')
     set mouse=a
@@ -186,7 +217,7 @@ source ~/.nvim/config/python.vim
 source ~/.nvim/config/tagbar.vim
 source ~/.nvim/config/nerdtree.vim
 source ~/.nvim/config/syntastic.vim
-source ~/.nvim/config/ycm.vim
+source ~/.nvim/config/completion.vim
 source ~/.nvim/config/ultisnips.vim
 source ~/.nvim/config/rainbow_brackets.vim
 source ~/.nvim/config/latex.vim

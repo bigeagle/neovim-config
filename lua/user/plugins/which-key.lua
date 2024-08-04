@@ -9,28 +9,23 @@ return {
 	local wk = require("which-key")
 	
 	local telescope = require('telescope.builtin')
-	wk.register({
-		-- Telescope
-		["<leader>f"] = {
-			name = "+fuzzy finder",
-			f = {telescope.find_files, "Find Files"},
-			g = {telescope.live_grep, "Grep Text"},
-			b = {telescope.buffers, "Buffers"},
-			h = {telescope.help_tags, "Help tags"},
-		},
-		
-		-- NvimTree
-		["<leader>e"] = {
-			name = "+NvimTree",
-			t = {"<cmd>NvimTreeToggle<cr>", "Toggle File Explorer"},
-			f = {"<cmd>NvimTreeFindFileToggle<cr>", "Toggle File Explorer on current file"},
-		},
-		
-		-- Others
-		["<leader>nh"] = {"<cmd>nohl<cr>", "Clear search highlights"},
-	})
+	wk.add({
+	  -- NvimTree
+    { "<leader>e", group = "NvimTree" },
+    { "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle File Explorer on current file" },
+    { "<leader>et", "<cmd>NvimTreeToggle<cr>", desc = "Toggle File Explorer" },
+	  -- Telescope
+    { "<leader>f", group = "fuzzy finder" },
+    { "<leader>fb", telescope.buffers, desc = "Buffers" },
+    { "<leader>ff", telescope.find_files, desc = "Find Files" },
+    { "<leader>fg", telescope.live_grep, desc = "Grep Text" },
+    { "<leader>fh", telescope.help_tags, desc = "Help tags" },
+	  -- Others
+    { "<leader>nh", "<cmd>nohl<cr>", desc = "Clear search highlights" },
+  })
 
   end,
   opts = {}
 }
 
+-- vim: ts=2 sts=2 sw=2 expandtab

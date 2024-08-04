@@ -8,6 +8,31 @@ vim.opt.termguicolors = true
 local HEIGHT_RATIO = 0.8 -- You can change this
 local WIDTH_RATIO = 0.6  -- You can change this too
 
+
+local function open_tab_silent(node)
+  local api = require("nvim-tree.api")
+
+  api.node.open.tab(node)
+  vim.cmd.tabprev()
+
+end
+
+local function my_on_attach(bufnr)
+  local api = require "nvim-tree.api"
+
+  local function opts(desc)
+    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  -- default mappings
+  api.config.mappings.default_on_attach(bufnr)
+
+  -- custom mappings
+  vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  vim.keymap.set('n', 'T', open_tab_silent, opts('Open Tab Silent'))
+
+end
+
 local opts = {
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -20,7 +45,7 @@ local opts = {
   prefer_startup_root = false,
   reload_on_bufenter = false,
   respect_buf_cwd = false,
-  on_attach = "default",
+  on_attach = my_on_attach,
   select_prompts = false,
   hijack_directories = {
     enable = true,
@@ -62,7 +87,6 @@ local opts = {
 }
 
 
-
 return {
   "nvim-tree/nvim-tree.lua",
   version = "*",
@@ -73,3 +97,5 @@ return {
     require("nvim-tree").setup(opts)
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 expandtab

@@ -13,20 +13,20 @@ return {
 
     cmp.setup({
       completion = {
-        completeopt = "menu,menuone,preview,noselect",
+        completeopt = "menu,menuone,preview,noinsert",
       },
       snippet = { -- configure how nvim-cmp interacts with snippet engine
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
         ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<S-TAB>"] = cmp.mapping.select_prev_item(), -- next suggestion
-        ["<TAB>"] = cmp.mapping.select_next_item(), -- next suggestion
+        ["<C-p>"] = cmp.mapping.select_prev_item(), -- next suggestion
+        ["<C-n>"] = cmp.mapping.select_next_item(), -- next suggestion
         ["<C-b>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+        ["<C-o>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+        ["<TAB>"] = cmp.mapping.confirm({ select = false }),
       }),
 
       -- sources for autocompletion
@@ -39,8 +39,8 @@ return {
 
 	  -- Add borders around the popup window
 	  window = {
-		  completion = cmp.config.window.bordered(),  
-		  documentation = cmp.config.window.bordered(),  
+		  completion = cmp.config.window.bordered(),
+		  documentation = cmp.config.window.bordered(),
 	  },
 
 

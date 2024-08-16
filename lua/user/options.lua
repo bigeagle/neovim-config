@@ -15,3 +15,8 @@ vim.opt.cursorline = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
+-- remove trailing whitespace on save
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})

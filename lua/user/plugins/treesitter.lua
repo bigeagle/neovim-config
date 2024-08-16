@@ -14,6 +14,7 @@ return {
       highlight = {
         enable = true,
       },
+      auto_install = true,
       -- enable indentation
       indent = { enable = true },
       -- enable autotagging (w/ nvim-ts-autotag plugin)
@@ -33,8 +34,10 @@ return {
         "bash",
         "lua",
         "vim",
-		"python",
-		"vue",
+        "python",
+        "vue",
+        "vimdoc",
+        "luadoc",
       },
       incremental_selection = {
         enable = true,
@@ -48,3 +51,5 @@ return {
     })
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 expandtab

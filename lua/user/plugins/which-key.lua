@@ -12,8 +12,8 @@ return {
 	wk.add({
 	  -- NvimTree
     { "<leader>e", group = "NvimTree" },
-    { "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle File Explorer on current file" },
-    { "<leader>et", "<cmd>NvimTreeToggle<cr>", desc = "Toggle File Explorer" },
+    -- { "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle File Explorer on current file" },
+    { "<leader>et", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle File Explorer" },
 	  -- Telescope
     { "<leader>f", group = "fuzzy finder" },
     { "<leader>fb", telescope.buffers, desc = "Buffers" },
@@ -22,6 +22,7 @@ return {
     { "<leader>fh", telescope.help_tags, desc = "Help tags" },
 	  -- Others
     { "<leader>nh", "<cmd>nohl<cr>", desc = "Clear search highlights" },
+    { "T", "<cmd>tabnew<cr>", desc = "New Tab" },
   })
 
   end,

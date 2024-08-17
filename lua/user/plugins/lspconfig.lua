@@ -3,7 +3,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
   },
@@ -79,23 +79,43 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-	-- LSP settings (for overriding per client)
-	local handlers =  {
-	  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
-	  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
-	}
+    -- LSP settings (for overriding per client)
+    local handlers =  {
+      ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
+      ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
+    }
 
-	vim.diagnostic.config({virtual_text = false})
-
+    vim.diagnostic.config({virtual_text = false})
 
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
-		  handlers = handlers,
+          handlers = handlers,
         })
       end,
+      tsserver = function()
+        local global_node_modules = os.getenv("GLOBAL_NODE_MODULES")
+        -- if global_node_modules is not set, skip
+        if global_node_modules == nil then
+          return
+        end
+        lspconfig.tsserver.setup({
+          init_options = {
+            plugins = {
+              {
+                name = "@vue/typescript-plugin",
+                location = global_node_modules .. "/@vue/typescript-plugin",
+                languages = {"javascript", "typescript", "vue"},
+              },
+            },
+          },
+          filetypes = {"javascript", "typescript", "vue"}
+        })
+      end
     })
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 expandtab

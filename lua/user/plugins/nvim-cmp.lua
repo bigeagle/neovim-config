@@ -5,6 +5,7 @@ return {
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "onsails/lspkind.nvim", -- vs-code like pictograms
+    "zbirenbaum/copilot-cmp",  -- copilot
   },
   config = function()
     local cmp = require("cmp")
@@ -12,6 +13,9 @@ return {
     local lspkind = require("lspkind")
 
     cmp.setup({
+      performance = {
+        debounce = 150,
+      },
       completion = {
         completeopt = "menu,menuone,preview,noinsert",
       },
@@ -29,28 +33,34 @@ return {
         ["<TAB>"] = cmp.mapping.confirm({ select = false }),
       }),
 
-      -- sources for autocompletion
-      sources = cmp.config.sources({
-		{ name = "nvim_lsp" }, -- LSP
-		{ name = "nvim_lsp_signature_help" }, -- LSP Signature Help
-        { name = "buffer" }, -- text within current buffer
-        { name = "path" }, -- file system paths
-      }),
+      sources = cmp.config.sources(
+        {
+          { name = "copilot" },  -- copilot
+          { name = "nvim_lsp" }, -- LSP
+          { name = "buffer" }, -- text within current buffer
+          { name = "path" }, -- file system paths
+        },
+        {
+          { name = "nvim_lsp_signature_help" }, -- LSP Signature Help
+        }
+      ),
 
-	  -- Add borders around the popup window
-	  window = {
-		  completion = cmp.config.window.bordered(),
-		  documentation = cmp.config.window.bordered(),
-	  },
-
+      -- Add borders around the popup window
+      window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+      },
 
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
+          symbol_map = { Copilot = "" }
         }),
       },
     })
   end,
 }
+
+-- vim: ts=2 sts=2 sw=2 expandtab

@@ -7,7 +7,7 @@ return {
     vim.o.timeoutlen = 300
 
 	local wk = require("which-key")
-	
+
 	local telescope = require('telescope.builtin')
 	wk.add({
 	  -- NvimTree

@@ -14,10 +14,10 @@ return {
 
     cmp.setup({
       performance = {
-        debounce = 150,
+        debounce = 200,
       },
       completion = {
-        completeopt = "menu,menuone,preview,noinsert",
+        completeopt = "menu,menuone,preview,noinsert,noselect",
       },
       snippet = { -- configure how nvim-cmp interacts with snippet engine
       },
@@ -31,6 +31,7 @@ return {
         ["<C-o>"] = cmp.mapping.complete(), -- show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- close completion window
         ["<TAB>"] = cmp.mapping.confirm({ select = false }),
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
 
       sources = cmp.config.sources(

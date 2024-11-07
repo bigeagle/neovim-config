@@ -16,6 +16,7 @@ return {
       performance = {
         debounce = 200,
       },
+      preselect = cmp.PreselectMode.None,
       completion = {
         completeopt = "menu,menuone,preview,noinsert,noselect",
       },

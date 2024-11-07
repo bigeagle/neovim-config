@@ -43,7 +43,7 @@ local opts = {
   sort_by = "name",
   root_dirs = {},
   prefer_startup_root = false,
-  reload_on_bufenter = false,
+  reload_on_bufenter = true,
   respect_buf_cwd = false,
   on_attach = my_on_attach,
   select_prompts = false,
@@ -84,6 +84,20 @@ local opts = {
     show_on_dirs = true,
     show_on_open_dirs = true,
   },
+  actions = {
+    open_file = {
+      resize_window = false,
+      window_picker = {
+        enable = false,
+      }
+    }
+  },
+  tab = {
+    sync = {
+      open = true,
+      close = true
+    }
+  }
 }
 
 

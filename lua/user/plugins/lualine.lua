@@ -1,5 +1,6 @@
 return {
   'nvim-lualine/lualine.nvim',
+
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function ()
     local utils = require("lualine.utils.utils")
@@ -109,7 +110,7 @@ return {
                 },
                 hl = {
                   enabled = "#50FA7B",
-                  sleep = "#AEB7D0",
+                  sleep = "#707080",
                   disabled = "#6272A4",
                   warning = "#FFB86C",
                   unknown = "#FF5555"

@@ -5,9 +5,6 @@ vim.g.loaded_netrwPlugin = 1
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
-local HEIGHT_RATIO = 0.8 -- You can change this
-local WIDTH_RATIO = 0.6  -- You can change this too
-
 
 local function open_tab_silent(node)
   local api = require("nvim-tree.api")
@@ -51,6 +48,16 @@ local opts = {
     enable = true,
     auto_open = true,
   },
+  view = {
+    preserve_window_proportions = true,
+    width = {},
+    float = {
+      enable = false,
+    },
+  },
+  renderer = {
+    symlink_destination = false,
+  },
   update_focused_file = {
     enable = false,
     update_root = false,
@@ -86,9 +93,9 @@ local opts = {
   },
   actions = {
     open_file = {
-      resize_window = false,
+      resize_window = true,
       window_picker = {
-        enable = false,
+        enable = true,
       }
     }
   },

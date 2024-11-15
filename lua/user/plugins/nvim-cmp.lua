@@ -10,6 +10,8 @@ return {
   config = function()
     local cmp = require("cmp")
 
+    -- require("copilot_cmp").setup()
+
     local lspkind = require("lspkind")
 
     cmp.setup({
@@ -36,8 +38,10 @@ return {
       }),
 
       sources = cmp.config.sources(
+        -- {
+        --   { name = "copilot" },  -- copilot
+        -- },
         {
-          { name = "copilot" },  -- copilot
           { name = "nvim_lsp" }, -- LSP
           { name = "buffer" }, -- text within current buffer
           { name = "path" }, -- file system paths
@@ -62,6 +66,7 @@ return {
         }),
       },
     })
+    vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
   end,
 }
 

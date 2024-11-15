@@ -20,6 +20,8 @@ if not vim.g.vscode then
   end
   vim.opt.rtp:prepend(lazypath)
 
+  -- set termguicolors to enable highlight groups
+  vim.opt.termguicolors = true
 
   require("lazy").setup("user.plugins", {
     checker = {

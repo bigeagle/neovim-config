@@ -85,6 +85,7 @@ return {
 
       sections = {
         lualine_c = {
+          'filename',
           {
             diagnostics_message,
             colors = {

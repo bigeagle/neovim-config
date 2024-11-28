@@ -18,6 +18,7 @@ return {
     { "<leader>f", group = "fuzzy finder" },
     { "<leader>fb", telescope.buffers, desc = "Buffers" },
     { "<leader>ff", telescope.find_files, desc = "Find Files" },
+    { "<C-p>", telescope.find_files, desc = "Find Files" },
     { "<leader>fg", telescope.live_grep, desc = "Grep Text" },
     { "<leader>fh", telescope.help_tags, desc = "Help tags" },
     -- Barbar
@@ -27,6 +28,7 @@ return {
     { "<leader>bd", "<cmd>BufferClose<cr>", desc = "Close Buffer" },
     { "bn", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
     { "bp", "<cmd>BufferPrevious<cr>", desc = "Previous Buffer" },
+    { "bd", "<cmd>BufferClose<cr>", desc = "Close Buffer" },
     { "gt", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
     { "gT", "<cmd>BufferPrevious<cr>", desc = "Previous Buffer" },
     { "<leader>1", "<cmd>BufferGoto 1<cr>", desc = "Goto Buffer 1" },

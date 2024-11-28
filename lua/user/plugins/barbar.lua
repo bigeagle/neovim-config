@@ -9,11 +9,13 @@ return {
   config = function()
 
     require('barbar').setup({
+      highlight_inactive_file_icons = false,
+      hide = {extensions = false, inactive = false},
 
       icons = {
         -- Configure the base icons on the bufferline.
         -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
-        buffer_index = false,
+        buffer_index = 'superscript',
         buffer_number = false,
         button = '',
         filetype = {
@@ -39,13 +41,23 @@ return {
 
         -- Configure the icons on the bufferline based on the visibility of a buffer.
         -- Supports all the base icon options, plus `modified` and `pinned`.
-        alternate = {filetype = {enabled = false}},
-        current = {buffer_index = false},
-        inactive = {button = '×'},
-        visible = {modified = {buffer_number = false}},
+        -- alternate = {filetype = {enabled = false}},
+        -- current = {buffer_index = false},
+        -- inactive = {},
+        -- visible = {modified = {buffer_number = false}},
       },
 
       sidebar_filetypes = { NvimTree = true },
+    })
+
+    -- Close buffer when window is closed
+    vim.api.nvim_create_autocmd('WinClosed', {
+      callback = function(tbl)
+        if tbl.args ~= nil then
+          vim.api.nvim_command('BufferClose ' .. tbl.args)
+        end
+      end,
+      group = vim.api.nvim_create_augroup('barbar_close_buf', {})
     })
   end,
 }

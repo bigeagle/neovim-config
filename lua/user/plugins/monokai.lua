@@ -10,7 +10,13 @@ return {
       on_colors = function(colors)
         colors.fg = "#f8f8f2"
         colors.bg_visual = "#666666"
-      end
+      end,
+      on_highlights = function(hl, c)
+        hl["BufferCurrentIndex"] = { fg = c.purple, bg = c.bg_highlight }
+        hl["BufferInactiveIndex"] = { fg = c.grey_light, bg = c.bg_float }
+        hl["BufferVisibleIndex"] = { fg = c.grey_light, bg = c.bg_status_alt }
+        hl["BufferAlternativeIndex"] = { fg = c.grey_light, bg = c.bg_status_alt }
+      end,
     }
     require("monokai-nightasty").load(opts)
 

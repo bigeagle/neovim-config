@@ -95,24 +95,24 @@ return {
           handlers = handlers,
         })
       end,
-      tsserver = function()
-        local global_node_modules = os.getenv("GLOBAL_NODE_MODULES")
-        -- if global_node_modules is not set, skip
-        if global_node_modules == nil then
-          return
-        end
-        lspconfig.tsserver.setup({
+      ts_ls = function()
+        local mason_registry = require('mason-registry')
+        local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+        lspconfig.ts_ls.setup({
           init_options = {
             plugins = {
               {
-                name = "@vue/typescript-plugin",
-                location = global_node_modules .. "/@vue/typescript-plugin",
-                languages = {"javascript", "typescript", "vue"},
+                name = '@vue/typescript-plugin',
+                location = vue_language_server_path,
+                languages = { 'vue' },
               },
             },
           },
-          filetypes = {"javascript", "typescript", "vue"}
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
         })
+      end,
+      volar = function()
+        lspconfig.volar.setup {}
       end
     })
   end,

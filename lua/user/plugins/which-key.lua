@@ -23,6 +23,8 @@ return {
     { "<leader>fh", telescope.help_tags, desc = "Help tags" },
     -- ToggleTerm
     { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Open Toggle Term" },
+    -- esc to close terminal
+    { "<esc><esc>", "<c-\\><c-n>", desc = "Terminal to normal mode", mode='t' },
 
     -- Barbar
     { "<leader>b", group = "Barbar" },

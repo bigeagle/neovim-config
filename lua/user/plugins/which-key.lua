@@ -21,6 +21,9 @@ return {
     { "<C-p>", telescope.find_files, desc = "Find Files" },
     { "<leader>fg", telescope.live_grep, desc = "Grep Text" },
     { "<leader>fh", telescope.help_tags, desc = "Help tags" },
+    -- ToggleTerm
+    { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Open Toggle Term" },
+
     -- Barbar
     { "<leader>b", group = "Barbar" },
     { "<leader>bn", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
@@ -28,6 +31,8 @@ return {
     { "<leader>bd", "<cmd>BufferClose<cr>", desc = "Close Buffer" },
     { "bn", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
     { "bp", "<cmd>BufferPrevious<cr>", desc = "Previous Buffer" },
+    { "bN", "<cmd>BufferMoveNext<cr>", desc = "Move to Next Buffer" },
+    { "bP", "<cmd>BufferMovePrevious<cr>", desc = "Move to Previous Buffer" },
     { "bd", "<cmd>BufferClose<cr>", desc = "Close Buffer" },
     { "gt", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
     { "gT", "<cmd>BufferPrevious<cr>", desc = "Previous Buffer" },

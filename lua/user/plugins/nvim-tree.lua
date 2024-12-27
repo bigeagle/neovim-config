@@ -14,6 +14,25 @@ local function open_tab_silent(node)
 
 end
 
+local function change_global_cwd_to_node()
+  local api = require("nvim-tree.api")
+  local notify = require("notify")
+
+  local ok, node = pcall(api.tree.get_node_under_cursor)
+  local abspath = node.absolute_path
+
+  -- if abspath is not directry, get parent directory
+  if vim.fn.isdirectory(abspath) == 0 then
+    abspath = vim.fs.dirname(abspath)
+  end
+  vim.api.nvim_set_current_dir(abspath)
+  notify("Changed global cwd to " .. abspath, "info", { title = "nvim-tree" })
+
+  -- nvim-tree change cwd to node
+  local global_cwd = vim.fn.getcwd(-1, -1)
+  api.tree.change_root(global_cwd)
+end
+
 local function my_on_attach(bufnr)
   local api = require "nvim-tree.api"
 
@@ -26,7 +45,31 @@ local function my_on_attach(bufnr)
 
   -- custom mappings
   vim.keymap.set('n', '?', api.tree.toggle_help, opts('Help'))
+  vim.keymap.set('n', '>', change_global_cwd_to_node, opts('Change Global CWD to Node'))
+
   -- vim.keymap.set('n', 'T', open_tab_silent, opts('Open Tab Silent'))
+  local function opts(desc)
+    return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+  end
+
+  local preview = require('nvim-tree-preview')
+
+  vim.keymap.set('n', 'P', preview.watch, opts 'Preview (Watch)')
+  vim.keymap.set('n', '<Esc>', preview.unwatch, opts 'Close Preview/Unwatch')
+  vim.keymap.set('n', '<C-f>', function() return preview.scroll(4) end, opts 'Scroll Down')
+  vim.keymap.set('n', '<C-b>', function() return preview.scroll(-4) end, opts 'Scroll Up')
+
+  -- Option A: Smart tab behavior: Only preview files, expand/collapse directories (recommended)
+  vim.keymap.set('n', '<Tab>', function()
+    local ok, node = pcall(api.tree.get_node_under_cursor)
+    if ok and node then
+      if node.type == 'directory' then
+        api.node.open.edit()
+      else
+        preview.node(node, { toggle_focus = true })
+      end
+    end
+  end, opts 'Preview')
 
 end
 
@@ -113,6 +156,9 @@ return {
   version = "*",
   dependencies = {
     "nvim-tree/nvim-web-devicons",
+    'b0o/nvim-tree-preview.lua', -- previewer
+    'nvim-lua/plenary.nvim',
+    'rcarriga/nvim-notify',
   },
   config = function()
     require("nvim-tree").setup(opts)

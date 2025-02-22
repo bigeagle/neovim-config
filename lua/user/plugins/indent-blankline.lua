@@ -3,7 +3,12 @@ return {
 	main = "ibl",
 	opts = {
 		indent = { char = "┊" },
-    exclude = { filetypes = {'dashboard'} }
+    exclude = { filetypes = {'dashboard'} },
+    scope = {
+      enabled = true,
+      show_start = false,
+      show_end = false,
+    },
 	}
 }
 

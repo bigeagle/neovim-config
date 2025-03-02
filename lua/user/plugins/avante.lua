@@ -44,7 +44,17 @@ return {
   },
   config = function()
     local opts = {
-      provider = "copilot"
+      provider = "copilot",
+      file_selector = {
+        -- file_selector = "fzf",
+        file_selector = "telescope",
+        file_selector_opts = {
+          layout_strategy = "vertical",
+          layout_config = {
+            width = 0.5,
+          },
+        },
+      },
     }
 
     require("avante").setup(opts)

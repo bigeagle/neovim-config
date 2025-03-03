@@ -23,7 +23,11 @@ if not vim.g.vscode then
   -- set termguicolors to enable highlight groups
   vim.opt.termguicolors = true
 
-  require("lazy").setup("user.plugins", {
+  require("lazy").setup({
+    spec = {
+      { import = "user.plugins" },  -- user plugins
+      { import = "local.plugins" }, -- local plugins
+    },
     checker = {
       -- automatically check for plugin updates
       enabled = true,

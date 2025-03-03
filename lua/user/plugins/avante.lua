@@ -47,7 +47,7 @@ return {
       provider = "copilot",
       file_selector = {
         -- file_selector = "fzf",
-        file_selector = "telescope",
+        provider = "telescope",
         file_selector_opts = {
           layout_strategy = "vertical",
           layout_config = {

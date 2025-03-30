@@ -44,7 +44,7 @@ return {
         {
           { name = "nvim_lsp" }, -- LSP
           { name = "buffer" }, -- text within current buffer
-          { name = "path" }, -- file system paths
+          -- { name = "path" }, -- file system paths
         },
         {
           { name = "nvim_lsp_signature_help" }, -- LSP Signature Help

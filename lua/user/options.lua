@@ -15,7 +15,11 @@ vim.opt.cursorline = true
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
--- vim.diagnostic.config({virtual_lines=true})
+if vim.fn.has('nvim-0.11') == 1 then
+    vim.diagnostic.config({
+        virtual_lines = { current_line = true }
+    })
+end
 
 vim.g.clipboard = {
   name = 'OSC 52',

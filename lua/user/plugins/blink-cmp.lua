@@ -3,6 +3,7 @@ return {
   version = '*',
   dependencies = {
     "fang2hou/blink-copilot",
+    'Kaiser-Yang/blink-cmp-avante',
   },
   opts = {
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
@@ -42,9 +43,10 @@ return {
       list = {
         selection = { preselect = true, auto_insert = false }
       },
-      documentation = { auto_show = true },
-      ghost_text = { enabled = true },
+      documentation = { auto_show = true, window = { border = 'single' } },
+      ghost_text = { enabled = false },
       menu = {
+        border = 'single',
         draw = {
           padding = 2,
           treesitter = { 'lsp' },
@@ -59,7 +61,7 @@ return {
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'copilot', 'lsp', 'snippets', 'buffer' },
+      default = { 'avante', 'copilot', 'lsp', 'snippets', 'buffer' },
       providers = {
         copilot = {
           name = "copilot",
@@ -70,6 +72,13 @@ return {
             kind_icon = "",
           }
         },
+        avante = {
+          module = 'blink-cmp-avante',
+          name = 'Avante',
+          opts = {
+            -- options for blink-cmp-avante
+          }
+        }
       },
     },
 

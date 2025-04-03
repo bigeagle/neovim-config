@@ -19,7 +19,7 @@ if vim.fn.has('nvim-0.11') == 1 then
     vim.diagnostic.config({
         virtual_lines = { current_line = true }
     })
-    vim.o.winborder = 'rounded'
+    -- vim.o.winborder = 'rounded'
 end
 
 vim.g.clipboard = {

@@ -1,6 +1,13 @@
 return {
   'saghen/blink.cmp',
   version = '*',
+  enabled = function()
+    return not vim.tbl_contains({
+      "NvimTree",
+      "Telescope",
+      "TelescopePrompt",
+    }, vim.bo.filetype) and vim.bo.buftype ~= "prompt" and vim.b.completion ~= false
+  end,
   dependencies = {
     "fang2hou/blink-copilot",
     'Kaiser-Yang/blink-cmp-avante',
@@ -41,7 +48,7 @@ return {
     -- (Default) Only show the documentation popup when manually triggered
     completion = {
       list = {
-        selection = { preselect = true, auto_insert = false }
+        selection = { preselect = false, auto_insert = true }
       },
       documentation = { auto_show = true, window = { border = 'single' } },
       ghost_text = { enabled = false },

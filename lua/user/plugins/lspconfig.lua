@@ -93,7 +93,6 @@ return {
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,
-          handlers = handlers,
         })
       end,
       ts_ls = function()
@@ -113,7 +112,9 @@ return {
         })
       end,
       volar = function()
-        lspconfig.volar.setup {}
+        lspconfig.volar.setup({
+          init_options = { hybridMode = false }
+        })
       end
     })
   end,

@@ -7,14 +7,12 @@ return {
     'saghen/blink.cmp',
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+		"mason-org/mason.nvim",
+		"mason-org/mason-lspconfig.nvim",
   },
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
-
-    -- import mason_lspconfig plugin
-    local mason_lspconfig = require("mason-lspconfig")
-
     local keymap = vim.keymap -- for conciseness
 
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -70,7 +68,7 @@ return {
     })
 
     -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = require('blink.cmp').get_lsp_capabilities()
+    -- local capabilities = require('blink.cmp').get_lsp_capabilities()
 
     -- Change the Diagnostic symbols in the sign column (gutter)
     -- (not in youtube nvim video)
@@ -80,43 +78,29 @@ return {
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
-    -- LSP settings (for overriding per client)
-    -- local handlers =  {
-    --   ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = 'rounded'}),
-    --   ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' }),
-    -- }
-
     vim.diagnostic.config({virtual_text = false})
 
-    mason_lspconfig.setup_handlers({
-      -- default handler for installed servers
-      function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
-      end,
-      ts_ls = function()
-        local mason_registry = require('mason-registry')
-        local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
-        lspconfig.ts_ls.setup({
-          init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                location = vue_language_server_path,
-                languages = { 'vue' },
-              },
+    local mason_registry = require('mason-registry')
+    local mason_pkg_vue = mason_registry.get_package('vue-language-server')
+    if mason_pkg_vue:is_installed() then
+      local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() .. '/node_modules/@vue/language-server'
+      vim.lsp.config('ts_ls', {
+        init_options = {
+          plugins = {
+            {
+              name = '@vue/typescript-plugin',
+              location = vue_language_server_path,
+              languages = { 'vue' },
             },
           },
-          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-        })
-      end,
-      volar = function()
-        lspconfig.volar.setup({
-          init_options = { hybridMode = false }
-        })
-      end
-    })
+        },
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+      })
+      vim.lsp.config('volar', {
+        init_options = { hybridMode = false }
+      })
+    end
+
   end,
 }
 

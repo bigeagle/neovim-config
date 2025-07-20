@@ -12,6 +12,7 @@ return {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     --- The below dependencies are optional,
+    "folke/snacks.nvim",
     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
     "zbirenbaum/copilot.lua", -- for providers='copilot'
@@ -50,6 +51,14 @@ return {
           },
         },
       },
+      input = {
+        provider = "snacks",
+        provider_opts = {
+          -- Additional snacks.input options
+          title = "Avante Input",
+          icon = " ",
+        },
+      }
     }
 
     require("avante").setup(opts)

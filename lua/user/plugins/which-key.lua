@@ -8,7 +8,7 @@ return {
 
 	local wk = require("which-key")
 
-	local telescope = require('telescope.builtin')
+	-- local telescope = require('telescope.builtin')
 	wk.add({
 	  -- NvimTree
     { "<leader>e", group = "NvimTree" },
@@ -16,14 +16,15 @@ return {
     { "<leader>et", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Toggle File Explorer" },
 
 	  -- Telescope
-    { "<leader>f", group = "fuzzy finder" },
-    { "<leader>fb", telescope.buffers, desc = "Buffers" },
-    { "<leader>ff", telescope.find_files, desc = "Find Files" },
-    { "<C-p>", telescope.find_files, desc = "Find Files" },
-    { "<leader>fg", telescope.live_grep, desc = "Grep Text" },
-    { "<leader>fh", telescope.help_tags, desc = "Help tags" },
+    -- { "<leader>f", group = "fuzzy finder" },
+    -- { "<leader>fb", telescope.buffers, desc = "Buffers" },
+    -- { "<leader>ff", telescope.find_files, desc = "Find Files" },
+    -- { "<C-p>", telescope.find_files, desc = "Find Files" },
+    -- { "<leader>fg", telescope.live_grep, desc = "Grep Text" },
+    -- { "<leader>fh", telescope.help_tags, desc = "Help tags" },
     -- ToggleTerm
     { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Open Toggle Term" },
+
     -- esc to close terminal
     { "<esc><esc>", "<c-\\><c-n>", desc = "Terminal to normal mode", mode='t' },
 

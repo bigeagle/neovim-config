@@ -27,10 +27,12 @@ return {
   },
   config = function()
     local opts = {
+      behaviour = {
+        -- enable_fastapply = true,
+      },
       provider = "moonshot",
       providers = {
         moonshot = {
-          __inherited_from = "openai",
           endpoint = "https://api.moonshot.cn/v1",
           model = "kimi-k2-0711-preview",
           api_key_name = 'MOONSHOT_API_KEY',
@@ -40,6 +42,9 @@ return {
             max_tokens = 32768,
           },
         },
+        -- morph = {
+        --   model = "morph-v3-large",
+        -- },
       },
       file_selector = {
         -- file_selector = "fzf",

@@ -1,5 +1,5 @@
 return {
-    "mason-org/mason.nvim",
+  "mason-org/mason.nvim",
 	dependencies = {
 		"mason-org/mason-lspconfig.nvim",
 	},
@@ -25,7 +25,9 @@ return {
 			ensure_installed = {
 				"pyright",
 			},
-      automatic_enable = true,
+      automatic_enable = {
+        exclude = {"vue_ls", "vstls"}
+      },
 		})
 
 	end

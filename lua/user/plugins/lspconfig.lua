@@ -84,21 +84,30 @@ return {
     local mason_pkg_vue = mason_registry.get_package('vue-language-server')
     if mason_pkg_vue:is_installed() then
       local vue_language_server_path = vim.fn.expand('$MASON/packages/vue-language-server') .. '/node_modules/@vue/language-server'
-      vim.lsp.config('ts_ls', {
-        init_options = {
-          plugins = {
-            {
-              name = '@vue/typescript-plugin',
-              location = vue_language_server_path,
-              languages = { 'vue' },
+      local vue_plugin = {
+        name = '@vue/typescript-plugin',
+        location = vue_language_server_path,
+        languages = { 'vue' },
+        configNamespace = 'typescript',
+      }
+      local vtsls_config = {
+        settings = {
+          vtsls = {
+            tsserver = {
+              globalPlugins = {
+                vue_plugin,
+              },
             },
           },
         },
         filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-      })
-      vim.lsp.config('volar', {
-        init_options = { hybridMode = false }
-      })
+      }
+      -- If you are on most recent `nvim-lspconfig`
+      local vue_ls_config = {}
+      -- nvim 0.11 or above
+      vim.lsp.config('vtsls', vtsls_config)
+      vim.lsp.config('vue_ls', vue_ls_config)
+      vim.lsp.enable({'vtsls', 'vue_ls'})
     end
 
   end,

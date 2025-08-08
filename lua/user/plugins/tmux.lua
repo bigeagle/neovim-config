@@ -31,6 +31,11 @@ return {
       { tmux_prefix .. "j", tmux.move_bottom, desc = "select lower pane" },
       { tmux_prefix .. "k", tmux.move_top, desc = "select upper pane" },
       { tmux_prefix .. "l", tmux.move_right, desc = "select right pane" },
+      -- Terminal
+      { tmux_prefix .. "h", tmux.move_left, desc = "select left pane", mode="t" },
+      { tmux_prefix .. "j", tmux.move_bottom, desc = "select lower pane", mode="t" },
+      { tmux_prefix .. "k", tmux.move_top, desc = "select upper pane", mode="t" },
+      { tmux_prefix .. "l", tmux.move_right, desc = "select right pane", mode="t" },
     })
   end
 }

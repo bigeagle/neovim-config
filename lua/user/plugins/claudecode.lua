@@ -12,11 +12,24 @@ return {
     { "<leader>cr", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
     { "<leader>cC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
     { "<leader>cm", "<cmd>ClaudeCodeSelectModel<cr>", desc = "Select Claude model" },
-    { "<leader>cb", "<cmd>ClaudeCodeAdd %<cr>", desc = "Add current buffer" },
-    { "<leader>cs", "<cmd>ClaudeCodeSend<cr>", mode = "v", desc = "Send to Claude" },
+    { "<leader>cb",
+      function()
+        vim.cmd("ClaudeCodeAdd %")
+        vim.defer_fn(function() vim.cmd("ClaudeCodeFocus") end, 50)
+      end,
+      desc = "Add current buffer" },
+    { "<leader>cs",
+      function()
+        vim.cmd("ClaudeCodeSend")
+        vim.defer_fn(function() vim.cmd("ClaudeCodeFocus") end, 50)
+      end,
+      mode = "v", desc = "Send to Claude" },
     {
       "<leader>cs",
-      "<cmd>ClaudeCodeTreeAdd<cr>",
+      function()
+        vim.cmd("ClaudeCodeSend")
+        vim.defer_fn(function() vim.cmd("ClaudeCodeFocus") end, 50)
+      end,
       desc = "Add file",
       ft = { "NvimTree", "neo-tree", "oil", "minifiles" },
     },

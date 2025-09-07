@@ -13,6 +13,14 @@ return {
     'Kaiser-Yang/blink-cmp-avante',
   },
   opts = {
+    cmdline = {
+      keymap = {
+        preset = 'default',
+        ['<Tab>'] = { 'show', 'accept' },
+      },
+      completion = { menu = { auto_show = true } },
+    },
+
     -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
     -- 'super-tab' for mappings similar to vscode (tab to accept)
     -- 'enter' for enter to accept

@@ -22,8 +22,29 @@ return {
     -- { "<C-p>", telescope.find_files, desc = "Find Files" },
     -- { "<leader>fg", telescope.live_grep, desc = "Grep Text" },
     -- { "<leader>fh", telescope.help_tags, desc = "Help tags" },
+
     -- ToggleTerm
     { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Open Toggle Term" },
+
+    -- Yazi
+    { "<leader>y", group = "Yazi" },
+    {
+      "<leader>yf",
+      mode = { "n", "v" },
+      "<cmd>Yazi<cr>",
+      desc = "Open yazi at the current file",
+    },
+    {
+      -- Open in the current working directory
+      "<leader>yc",
+      "<cmd>Yazi cwd<cr>",
+      desc = "Open the file manager in nvim's working directory",
+    },
+    {
+      "<leader>yt",
+      "<cmd>Yazi toggle<cr>",
+      desc = "Resume the last yazi session",
+    },
 
     -- esc to close terminal
     { "<esc><esc>", "<c-\\><c-n>", desc = "Terminal to normal mode", mode='t' },
@@ -61,6 +82,7 @@ return {
 
 	  -- Others
     { "<leader>nh", "<cmd>nohl<cr>", desc = "Clear search highlights" },
+    { "<leader>nd", "<cmd>Noice hide<cr>", desc = "Dismiss notifications" },
     -- { "T", "<cmd>tabnew<cr>", desc = "New Tab" },
   })
 

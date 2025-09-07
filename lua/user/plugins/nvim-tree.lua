@@ -75,10 +75,10 @@ end
 
 local opts = {
   auto_reload_on_write = true,
-  disable_netrw = false,
+  disable_netrw = true,
   sync_root_with_cwd = false,
   hijack_cursor = false,
-  hijack_netrw = true,
+  hijack_netrw = false,
   hijack_unnamed_buffer_when_opening = false,
   sort_by = "name",
   root_dirs = {},
@@ -88,8 +88,8 @@ local opts = {
   on_attach = my_on_attach,
   select_prompts = false,
   hijack_directories = {
-    enable = true,
-    auto_open = true,
+    enable = false,
+    auto_open = false,
   },
   view = {
     preserve_window_proportions = true,

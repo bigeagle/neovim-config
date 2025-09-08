@@ -26,6 +26,9 @@ return {
     -- ToggleTerm
     { "<leader>tt", "<cmd>ToggleTerm<cr>", desc = "Open Toggle Term" },
 
+    -- claude code
+    { "<leader>c", group = "AI/Claude Code" },
+
     -- Yazi
     { "<leader>y", group = "Yazi" },
     {
@@ -61,15 +64,15 @@ return {
     { "bd", "<cmd>BufferClose<cr>", desc = "Close Buffer" },
     { "gt", "<cmd>BufferNext<cr>", desc = "Next Buffer" },
     { "gT", "<cmd>BufferPrevious<cr>", desc = "Previous Buffer" },
-    { "<leader>1", "<cmd>BufferGoto 1<cr>", desc = "Goto Buffer 1" },
-    { "<leader>2", "<cmd>BufferGoto 2<cr>", desc = "Goto Buffer 2" },
-    { "<leader>3", "<cmd>BufferGoto 3<cr>", desc = "Goto Buffer 3" },
-    { "<leader>4", "<cmd>BufferGoto 4<cr>", desc = "Goto Buffer 4" },
-    { "<leader>5", "<cmd>BufferGoto 5<cr>", desc = "Goto Buffer 5" },
-    { "<leader>6", "<cmd>BufferGoto 6<cr>", desc = "Goto Buffer 6" },
-    { "<leader>7", "<cmd>BufferGoto 7<cr>", desc = "Goto Buffer 7" },
-    { "<leader>8", "<cmd>BufferGoto 8<cr>", desc = "Goto Buffer 8" },
-    { "<leader>9", "<cmd>BufferGoto 9<cr>", desc = "Goto Buffer 9" },
+    { "<leader>b1", "<cmd>BufferGoto 1<cr>", desc = "Goto Buffer 1" },
+    { "<leader>b2", "<cmd>BufferGoto 2<cr>", desc = "Goto Buffer 2" },
+    { "<leader>b3", "<cmd>BufferGoto 3<cr>", desc = "Goto Buffer 3" },
+    { "<leader>b4", "<cmd>BufferGoto 4<cr>", desc = "Goto Buffer 4" },
+    { "<leader>b5", "<cmd>BufferGoto 5<cr>", desc = "Goto Buffer 5" },
+    { "<leader>b6", "<cmd>BufferGoto 6<cr>", desc = "Goto Buffer 6" },
+    { "<leader>b7", "<cmd>BufferGoto 7<cr>", desc = "Goto Buffer 7" },
+    { "<leader>b8", "<cmd>BufferGoto 8<cr>", desc = "Goto Buffer 8" },
+    { "<leader>b9", "<cmd>BufferGoto 9<cr>", desc = "Goto Buffer 9" },
     { "<M-1>", "<cmd>BufferGoto 1<cr>", desc = "Goto Buffer 1" },
     { "<M-2>", "<cmd>BufferGoto 2<cr>", desc = "Goto Buffer 2" },
     { "<M-3>", "<cmd>BufferGoto 3<cr>", desc = "Goto Buffer 3" },

@@ -111,7 +111,7 @@ local opts = {
     args = {},
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
     git_clean = false,
     no_buffer = false,
     custom = { "^.git$" }, -- hide .git dir
